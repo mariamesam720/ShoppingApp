@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shooping_app/utilis/custom_button.dart';
-import 'package:shooping_app/utilis/my_text_field.dart';
+import 'package:shooping_app/screens/home.dart';
+import 'package:shooping_app/widgets/custom_button.dart';
+import 'package:shooping_app/widgets/my_text_field.dart';
 
 class Signup extends StatefulWidget {
   Signup({super.key});
@@ -16,19 +17,26 @@ class _SignupState extends State<Signup> {
   final passwordcontroller = TextEditingController();
   final confirmpasswordcontroller = TextEditingController();
   void _Signup() {
-    final password = passwordcontroller.text;
-    final confirmPassword = confirmpasswordcontroller.text;
-    final email = emailcontroller.text.trim();
-    final fullname = fullnamecontroller.text.trim();
+    
     if (_formKey.currentState!.validate()) {
       final snackbar = SnackBar(
         content: const Text('Account created successfully'),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
   }
 
   @override
+  void initState() {
+    super.initState();
+    passwordcontroller.addListener(() {
+      if(_formKey.currentState!=null){
+        _formKey.currentState!.validate();
+      }
+    });
+    
+  }
   String? _validateName(String? v) {
     //check if empty
     if (v == null || v.trim().isEmpty) return 'Full name is tequired';
@@ -57,7 +65,7 @@ class _SignupState extends State<Signup> {
 
   String? _validateconfirm(String? v) {
     if (v == null || v.isEmpty) return 'confirm password is required';
-    if (v!=passwordcontroller.text) return 'passwords do not match';
+    if (v.trim()!=passwordcontroller.text.trim()) return 'passwords do not match';
     return null;
   }
 
@@ -96,7 +104,7 @@ class _SignupState extends State<Signup> {
                   hintText: 'Enter your full name',
                   obscureText: false,
                   labalText: 'Full Name',
-                  valid: _validateName,
+                  valid: _validateName, onChanged: (v) {  },
                 ),
                 SizedBox(height: 10),
                 MyTextField(
@@ -104,7 +112,7 @@ class _SignupState extends State<Signup> {
                   hintText: 'Enter your Email ',
                   obscureText: false,
                   labalText: 'Email',
-                  valid: _validateEmail,
+                  valid: _validateEmail, onChanged: (v) {  },
                 ),
 
                 SizedBox(height: 10),
@@ -113,7 +121,7 @@ class _SignupState extends State<Signup> {
                   hintText: 'Enter your password',
                   obscureText: true,
                   labalText: 'Password',
-                  valid: _validatepass,
+                  valid: _validatepass, onChanged: (v) {  },
                 ),
                 SizedBox(height: 10),
                 MyTextField(
@@ -122,6 +130,11 @@ class _SignupState extends State<Signup> {
                   obscureText: true,
                   labalText: 'Confirm Password',
                   valid: _validateconfirm,
+                  onChanged: (v) {
+                    if (_formKey.currentState != null) {
+                      _formKey.currentState!.validate();
+                    }
+                  },
                 ),
                 SizedBox(height: 20),
                 CustomButton(text: 'Create Account', onPressed: _Signup),

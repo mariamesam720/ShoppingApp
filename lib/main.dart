@@ -11,6 +11,7 @@ class ShoppingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Shop Craft',
 
       home: const Welcome(), // Use the Welcome screen as the home screen

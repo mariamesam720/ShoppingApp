@@ -1,8 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:shooping_app/utilis/custom_button.dart';
-import 'package:shooping_app/utilis/my_text_field.dart';
+import 'package:shooping_app/screens/home.dart';
+import 'package:shooping_app/widgets/custom_button.dart';
+import 'package:shooping_app/widgets/my_text_field.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -22,6 +23,7 @@ class _LoginState extends State<Login> {
       final snackBar = SnackBar(content: const Text('Account sign-in successfully'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
   }
 
   String? _validateEmail(String? v) {
@@ -65,7 +67,7 @@ class _LoginState extends State<Login> {
                 hintText: 'Email',
                 obscureText: false,
                 labalText: 'Email',
-                valid: _validateEmail,
+                valid: _validateEmail, onChanged: (v) {  },
               ),
             ),
             SizedBox(height: 10),
@@ -76,7 +78,7 @@ class _LoginState extends State<Login> {
                 hintText: 'Password',
                 obscureText: true,
                 labalText: 'Password',
-                valid: _validatepass,
+                valid: _validatepass, onChanged: (v) {  },
               ),
             ),
             SizedBox(height: 20),
