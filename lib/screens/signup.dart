@@ -24,7 +24,18 @@ class _SignupState extends State<Signup> {
       );
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+    Navigator.push(context, 
+    PageRouteBuilder(
+      opaque: false,
+    pageBuilder: (context,Animation,secondaryAnimation)=>  Home(),
+    transitionDuration: Duration(seconds: 1),
+    transitionsBuilder:(context, animation, secondaryAnimation, child) {
+       return FadeTransition(
+        opacity:animation,
+        child: child,
+      );
+    },
+    ));
   }
 
   @override
