@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   smooth_page_indicator: ^1.2.1
+  easy_localization: ^3.0.7
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
     - assets/images/premium_laptop.jpg
     - assets/images/prof_workspace.jpg
     - assets/images/ligting.jpg
+    - lang/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

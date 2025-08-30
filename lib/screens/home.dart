@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shooping_app/widgets/feature_product.dart';
 import 'package:shooping_app/widgets/hot_offers.dart';
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
       
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('Our products'),
+        title: Text('Our products').tr(),
       ),
       body:
           SingleChildScrollView(
@@ -29,7 +30,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children:[ 
-                Center(child: Text('Featured Products', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                Center(child: Text('Featured Products'.tr(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
                 const SizedBox(height: 10,),
                 SizedBox(
                   height: 200,
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   const SizedBox(height: 20,),
-                Center(child: Text('Shop our Products', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                Center(child: Text('Shop our Products'.tr(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
                 const SizedBox(height: 10,),
                 GridView.count(
                   shrinkWrap: true,

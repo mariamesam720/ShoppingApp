@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shooping_app/screens/home.dart';
 import 'package:shooping_app/widgets/custom_button.dart';
@@ -20,7 +21,7 @@ class _SignupState extends State<Signup> {
     
     if (_formKey.currentState!.validate()) {
       final snackbar = SnackBar(
-        content: const Text('Account created successfully'),
+        content: Text('Account created successfully'.tr()),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
@@ -50,33 +51,33 @@ class _SignupState extends State<Signup> {
   }
   String? _validateName(String? v) {
     //check if empty
-    if (v == null || v.trim().isEmpty) return 'Full name is tequired';
+    if (v == null || v.trim().isEmpty) return 'Full name is required'.tr();
     final name = v.trim();
     final first = name.characters.first;
     if (!RegExp(r'[A-Z]').hasMatch(first)) {
-      return 'First letter must be uppercase';
+      return 'First letter must be uppercase'.tr();
     }
     return null;
   }
 
   String? _validateEmail(String? v) {
     //check if empty
-    if (v == null || v.trim().isEmpty) return 'Email is required';
+    if (v == null || v.trim().isEmpty) return 'Email is required'.tr();
     //chech if email contains @
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(v.trim()))
-      return 'Enter a valid email';
+      return 'Enter a valid email'.tr();
     return null;
   }
 
   String? _validatepass(String? v) {
-    if (v == null || v.isEmpty) return 'password is required';
-    if (v.length < 6) return 'password must be at least 6 characters';
+    if (v == null || v.isEmpty) return 'password is required'.tr();
+    if (v.length < 6) return 'password must be at least 6 characters'.tr();
     return null;
   }
 
   String? _validateconfirm(String? v) {
-    if (v == null || v.isEmpty) return 'confirm password is required';
-    if (v.trim()!=passwordcontroller.text.trim()) return 'passwords do not match';
+    if (v == null || v.isEmpty) return 'confirm password is required'.tr();
+    if (v.trim()!=passwordcontroller.text.trim()) return 'passwords do not match'.tr();
     return null;
   }
 
@@ -90,7 +91,10 @@ class _SignupState extends State<Signup> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign Up')),
+      appBar: AppBar(title: Text('Sign Up'.tr()),
+      
+      
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 70),
         child: SingleChildScrollView(
@@ -101,45 +105,45 @@ class _SignupState extends State<Signup> {
             child: Column(
               children: [
                 Text(
-                  'Create an Account',
+                  'Create an Account'.tr(),
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF9333EA),
                   ),
                 ),
-                Text('Join Shop Craft today'),
+                Text('Join Shop Craft today'.tr()),
                 SizedBox(height: 20),
                 MyTextField(
                   controller: fullnamecontroller,
-                  hintText: 'Enter your full name',
+                  hintText: 'Enter your full name'.tr(),
                   obscureText: false,
-                  labalText: 'Full Name',
+                  labalText: 'Full Name'.tr(),
                   valid: _validateName, onChanged: (v) {  },
                 ),
                 SizedBox(height: 10),
                 MyTextField(
                   controller: emailcontroller,
-                  hintText: 'Enter your Email ',
+                  hintText: 'Enter your Email '.tr(),
                   obscureText: false,
-                  labalText: 'Email',
+                  labalText: 'Email'.tr(),
                   valid: _validateEmail, onChanged: (v) {  },
                 ),
 
                 SizedBox(height: 10),
                 MyTextField(
                   controller: passwordcontroller,
-                  hintText: 'Enter your password',
+                  hintText: 'Enter your password'.tr(),
                   obscureText: true,
-                  labalText: 'Password',
+                  labalText: 'Password'.tr(),
                   valid: _validatepass, onChanged: (v) {  },
                 ),
                 SizedBox(height: 10),
                 MyTextField(
                   controller: confirmpasswordcontroller,
-                  hintText: 'Confirm your password',
+                  hintText: 'Confirm your password'.tr(),
                   obscureText: true,
-                  labalText: 'Confirm Password',
+                  labalText: 'Confirm Password'.tr(),
                   valid: _validateconfirm,
                   onChanged: (v) {
                     if (_formKey.currentState != null) {
@@ -148,7 +152,7 @@ class _SignupState extends State<Signup> {
                   },
                 ),
                 SizedBox(height: 20),
-                CustomButton(text: 'Create Account', onPressed: _Signup),
+                CustomButton(text: 'Create Account'.tr(), onPressed: _Signup),
               ],
             ),
           ),

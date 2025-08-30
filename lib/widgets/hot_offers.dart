@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class HotOffers extends StatelessWidget {
@@ -30,9 +31,9 @@ class HotOffers extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Hot offers',
+          'Hot offers'.tr(),
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
+        ).tr(),
 
         ListView.builder(
           shrinkWrap: true,

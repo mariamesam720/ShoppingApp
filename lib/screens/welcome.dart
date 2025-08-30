@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shooping_app/screens/signup.dart';
 import 'package:shooping_app/screens/Login.dart';
@@ -9,12 +10,24 @@ class Welcome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Shop Craft'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              if (context.locale.languageCode == 'en') {
+                context.setLocale(const Locale('ar', 'EG'));
+              } else {
+                context.setLocale(const Locale('en', 'US'));
+              }
+            },
+            icon: Icon(Icons.language_outlined, size: 30),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Text('Your Premium Shopping Experience', style: TextStyle(fontSize: 15,))),
+            Center(child: Text('Your Premium Shopping Experience'.tr(), style: TextStyle(fontSize: 15,))),
             SizedBox(height: 50,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -30,12 +43,12 @@ class Welcome extends StatelessWidget {
               children: [
                 ElevatedButton(onPressed:(){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-                }, child:Text("Login"),),
+                }, child:Text("Login".tr()),),
             
                 SizedBox(width: 20,),
                 ElevatedButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Signup()));
-                }, child:Text("Sign Up")),
+                }, child:Text("Sign Up".tr())),
               ],
             )
           ],
