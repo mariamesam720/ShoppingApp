@@ -9,7 +9,7 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shop Craft'),
+        title: Text('Shop Craft', style: TextStyle(fontFamily: 'Suwannaphum'),),
         actions: [
           IconButton(
             onPressed: () {
@@ -27,7 +27,7 @@ class Welcome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Text('Your Premium Shopping Experience'.tr(), style: TextStyle(fontSize: 15,))),
+            Center(child: Text('Your Premium Shopping Experience'.tr(), style: TextStyle(fontSize: 15, fontFamily: 'Suwannaphum'),)),
             SizedBox(height: 50,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,12 +43,12 @@ class Welcome extends StatelessWidget {
               children: [
                 ElevatedButton(onPressed:(){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-                }, child:Text("Login".tr()),),
+                }, child:Text("Login".tr(), style: TextStyle(fontFamily:'Suwannaphum '),),),
             
                 SizedBox(width: 20,),
                 ElevatedButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Signup()));
-                }, child:Text("Sign Up".tr())),
+                }, child:Text("Sign Up".tr(), style: TextStyle(fontFamily:'Suwannaphum '),),),
               ],
             )
           ],

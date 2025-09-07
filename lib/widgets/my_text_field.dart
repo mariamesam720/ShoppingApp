@@ -38,7 +38,7 @@ class MyTextField extends StatelessWidget {
           hintText: hintText,
           label: Text(
             labalText,
-            style: const TextStyle(fontSize: 15),
+            style: const TextStyle(fontSize: 15, fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),
           ),
         ),
       ),

@@ -18,7 +18,10 @@ class FeatureProduct extends StatelessWidget {
       padding: EdgeInsetsGeometry.only(left: 70, top: 150),
         child: Text(data, style: TextStyle(
           fontSize: 20,fontWeight: FontWeight.bold,
-          color: Colors.white),),),
+          color: Colors.white,
+          fontFamily: 'Suwannaphum',
+          fontStyle: FontStyle.normal
+          ),),),
     );
   }
 }

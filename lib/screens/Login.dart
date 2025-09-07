@@ -19,15 +19,56 @@ class _LoginState extends State<Login> {
 
   final passwordcontroller = TextEditingController();
 
-  void signUserIn() {
-    if (_formKey.currentState!.validate()) {
-      final snackBar = SnackBar(content: Text('Account sign-in successfully'.tr()));
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
-    } else {
-      final snackBar = SnackBar(content: Text('Invalid email or password'.tr()));
-    }
+void signUserIn() {
+  if (_formKey.currentState!.validate()) {
+    final successSnackBar = SnackBar(
+      content: Row(
+        children: [
+          Expanded(
+            child: Text(
+              'Account sign-in successfully'.tr(),
+              style: TextStyle(fontFamily: 'Suwannaphum'),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()), 
+              );
+            },
+            child: Text(
+              'Close',
+              style: TextStyle(
+                color: Colors.white, 
+                fontFamily: 'Suwannaphum',
+              ),
+            ),
+          ),
+        ],
+      ),
+      backgroundColor: Colors.green,
+      duration: Duration(seconds: 5),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(successSnackBar);
+  } else {
+    // Error snackbar
+    final errorSnackBar = SnackBar(
+      content: Text(
+        'Invalid email or password'.tr(),
+        style: TextStyle(fontFamily: 'Suwannaphum'),
+      ),
+      backgroundColor: Colors.red,
+      duration: Duration(seconds: 3),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(errorSnackBar);
   }
+}
+
+
 
   String? _validateEmail(String? v) {
     if (v == null || v.trim().isEmpty) return 'Email is required'.tr();
@@ -46,7 +87,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login'.tr())),
+      appBar: AppBar(title: Text('Login'.tr(), style: TextStyle(fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),),),
       body: Form(
         key: _formKey,
         child: Column(
@@ -59,9 +100,11 @@ class _LoginState extends State<Login> {
                 color: Color(0xFF9333EA),
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Suwannaphum',
+                fontStyle: FontStyle.normal
               ),
             ),
-            Text("Sign in to ShopCraft".tr()),
+            Text("Sign in to ShopCraft".tr(), style: TextStyle(fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),),
             SizedBox(height: 20),
 
             Padding(

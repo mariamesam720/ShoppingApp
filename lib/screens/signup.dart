@@ -21,11 +21,18 @@ class _SignupState extends State<Signup> {
     
     if (_formKey.currentState!.validate()) {
       final snackbar = SnackBar(
-        content: Text('Account created successfully'.tr()),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackbar);
-    }
-    Navigator.push(context, 
+        backgroundColor: Colors.green,
+        content: Row(
+          children: [
+            Expanded(
+              child: Text('Account created successfully'.tr(), style: TextStyle(
+                fontFamily: 'Suwannaphum',
+                fontStyle: FontStyle.normal
+                ),),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(context, 
     PageRouteBuilder(
       opaque: false,
     pageBuilder: (context,Animation,secondaryAnimation)=>  Home(),
@@ -37,6 +44,20 @@ class _SignupState extends State<Signup> {
       );
     },
     ));
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+              child: Text('Close', style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Suwannaphum',
+                fontStyle: FontStyle.normal
+                ),),
+            ),
+          ],
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+    }
+    
   }
 
   @override
@@ -91,7 +112,7 @@ class _SignupState extends State<Signup> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign Up'.tr()),
+      appBar: AppBar(title: Text('Sign Up'.tr(), style: TextStyle(fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),),
       
       
       ),
@@ -110,9 +131,11 @@ class _SignupState extends State<Signup> {
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF9333EA),
+                    fontFamily: 'Suwannaphum',
+                    fontStyle: FontStyle.normal
                   ),
                 ),
-                Text('Join Shop Craft today'.tr()),
+                Text('Join Shop Craft today'.tr(), style: TextStyle(fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),),
                 SizedBox(height: 20),
                 MyTextField(
                   controller: fullnamecontroller,

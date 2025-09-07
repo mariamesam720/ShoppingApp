@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
       
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('Our products').tr(),
+        title: Text('Our products', style: TextStyle(fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),).tr(),
       ),
       body:
           SingleChildScrollView(
@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children:[ 
-                Center(child: Text('Featured Products'.tr(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                Center(child: Text('Featured Products'.tr(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),)),
                 const SizedBox(height: 10,),
                 SizedBox(
                   height: 200,

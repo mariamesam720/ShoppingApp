@@ -12,6 +12,8 @@ final VoidCallback onPressed;
               backgroundColor: Color(0xFF9333EA),
               padding: EdgeInsets.symmetric(horizontal: 120, vertical: 15),
             ),
-            onPressed: onPressed, child: Text(text, style: TextStyle(color: Colors.white),));
+            onPressed: onPressed, child: Text(text, style: TextStyle(
+              fontFamily: 'Suwannaphum',
+              color: Colors.white),));
   }
 }

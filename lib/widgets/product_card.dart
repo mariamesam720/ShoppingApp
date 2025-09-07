@@ -54,7 +54,11 @@ class ProductCard extends StatelessWidget {
                     iconSize: 20,
                     color: Colors.purple,
                     onPressed: () {
-                      final snackbar= SnackBar(content: Text('"Item added to the cart'),
+                      final snackbar= SnackBar(content: Text('"Item added to the cart', style: TextStyle(
+                        fontFamily: 'Suwannaphum',
+                        fontStyle: FontStyle.normal
+                        ),), 
+                        backgroundColor: Colors.purple,
                       duration: Duration(seconds: 1),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackbar);
@@ -72,6 +76,8 @@ class ProductCard extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
+                fontFamily: 'Suwannaphum',
+                fontStyle: FontStyle.normal
               ),
             ),
           ),
@@ -82,6 +88,8 @@ class ProductCard extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: Colors.purple,
+              fontFamily: 'Suwannaphum',
+              fontStyle: FontStyle.normal
             ),
           ),
         ],

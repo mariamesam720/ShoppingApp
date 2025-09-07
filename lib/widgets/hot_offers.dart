@@ -32,7 +32,7 @@ class HotOffers extends StatelessWidget {
       children: [
         Text(
           'Hot offers'.tr(),
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, fontFamily: 'Suwannaphum', fontStyle: FontStyle.normal),
         ).tr(),
 
         ListView.builder(
