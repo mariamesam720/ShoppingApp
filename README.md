@@ -101,3 +101,21 @@ cd flutter-shopping-app
 flutter pub get
 Run the app
 flutter run
+----------------------------
+### Screenshots  
+
+#### Welcome Screen  
+<img src="assets/screenshots/Welcome.png" width="300">  
+
+### Sign Up  
+<img src="assets/screenshots/sign_up.png" width="300">  
+
+### log In  
+<img src="assets/screenshots/Login.png" width="300">  
+
+### Shopping Home Screen  
+<img src="assets/screenshots/Home.png" width="300"> 
+<img src="assets/screenshots/Hot_offers.png" width="300"> 
+
+
+

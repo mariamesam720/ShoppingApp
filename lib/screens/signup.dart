@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:shooping_app/screens/home.dart';
-import 'package:shooping_app/widgets/custom_button.dart';
-import 'package:shooping_app/widgets/my_text_field.dart';
+import 'package:shopping_app/screens/home.dart';
+import 'package:shopping_app/widgets/custom_button.dart';
+import 'package:shopping_app/widgets/my_text_field.dart';
 
 class Signup extends StatefulWidget {
   Signup({super.key});
