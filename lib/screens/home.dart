@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:shooping_app/widgets/feature_product.dart';
-import 'package:shooping_app/widgets/hot_offers.dart';
-import 'package:shooping_app/widgets/product_card.dart';
+import 'package:shopping_app/widgets/feature_product.dart';
+import 'package:shopping_app/widgets/hot_offers.dart';
+import 'package:shopping_app/widgets/product_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 

@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:shooping_app/screens/signup.dart';
-import 'package:shooping_app/screens/Login.dart';
+import 'package:shopping_app/screens/signup.dart';
+import 'package:shopping_app/screens/Login.dart';
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
 
